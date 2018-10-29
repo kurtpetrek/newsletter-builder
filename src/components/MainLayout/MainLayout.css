@@ -1,0 +1,8 @@
+.MainLayout-container {
+  display: flex;
+}
+
+.MainLayout-container > div {
+  padding: 10px;
+  width: 50%;
+}

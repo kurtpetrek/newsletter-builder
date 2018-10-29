@@ -1,0 +1,8 @@
+.ComponentBlockSelector {
+  margin-top: 15px;
+  display: flex;
+}
+
+.ComponentBlockSelector-select-holder {
+  width: 300px;
+}
