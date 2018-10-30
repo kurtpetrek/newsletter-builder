@@ -134,6 +134,7 @@ class ComponentBlockRenderer extends Component {
           edit_component_block={edit_component_block}
           remove_component_block={remove_component_block}
           onSortEnd={on_sort_end}
+          useWindowAsScrollContainer={true}
         />
       </div>
     );
