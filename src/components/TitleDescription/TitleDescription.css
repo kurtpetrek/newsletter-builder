@@ -1,0 +1,9 @@
+.TitleDescription {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.TitleDescription > div {
+  margin: 0 40px; 
+}

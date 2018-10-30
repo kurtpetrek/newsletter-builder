@@ -3,6 +3,8 @@ import ComponentBlockSelector from './../ComponentBlockSelector/ComponentBlockSe
 import ComponentBlockRenderer from './../ComponentBlockRenderer/ComponentBlockRenderer';
 import ShowHTMLOutput from './../ShowHTMLOutput/ShowHTMLOutput';
 import RenderPreview from './../RenderPreview/RenderPreview';
+import TitleDescription from './../TitleDescription/TitleDescription';
+
 import { arrayMove } from 'react-sortable-hoc';
 
 import renderHTML from './../../helperFunctions/renderHTML';
@@ -96,10 +98,25 @@ class MainLayout extends Component {
     });
   };
 
+  set_input_value = (e) => {
+    const { name, value } = e.target;
+    this.setState(prevState => {
+      const state = {...prevState};
+      state[name] = value;
+      return state;
+    });
+  };
+
   render() {
     return (
       <div className="MainLayout">
         <h1 style={{textAlign: 'center'}}>Newsletter Builder</h1>
+
+        <TitleDescription
+          handle_change={this.set_input_value}
+          title={this.state.title}
+          description={this.state.description}
+        />
         <div className="MainLayout-container">
           <div>
             <ComponentBlockRenderer
@@ -111,11 +128,17 @@ class MainLayout extends Component {
             <ComponentBlockSelector add_component_block={this.add_component_block} />
           </div>
           <div>
-            <RenderPreview component_blocks={this.state.component_blocks}/>
+            <RenderPreview
+              component_blocks={this.state.component_blocks}
+              is_final={false}
+            />
           </div>
         </div>
         <ShowHTMLOutput
           component_blocks={this.state.component_blocks}
+          is_final={true}
+          title={this.state.title}
+          description={this.state.description}
         />
       </div>
     );

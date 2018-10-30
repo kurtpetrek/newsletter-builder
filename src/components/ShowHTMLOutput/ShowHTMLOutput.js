@@ -7,7 +7,9 @@ class ShowHTMLOutput extends Component {
   render() {
     const content = renderHTML({
       component_blocks: this.props.component_blocks,
-      is_final: true
+      title: this.props.title,
+      description: this.props.description,
+      is_final: this.props.is_final
     });
 
     return (
