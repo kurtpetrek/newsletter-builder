@@ -16,7 +16,7 @@ self.__precacheManifest = [
     "url": "/newsletter-builder/static/css/main.c23bb7c2.chunk.css"
   },
   {
-    "revision": "b03e6d4b73404233b4dd384c221d0406",
+    "revision": "07d9c9df5971fc75fb7e047dc6a52f9f",
     "url": "/newsletter-builder/index.html"
   }
 ];
