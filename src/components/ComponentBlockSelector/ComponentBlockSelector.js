@@ -39,19 +39,21 @@ class ComponentBlockSelector extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
-      <div className="ComponentBlockSelector">
-        <div className="ComponentBlockSelector-select-holder">
-          <Select
-            value={this.state.selected_component_block}
-            onChange={this.handle_selected_component_block_change}
-            options={this.renderOptions()}
-          />
+      <div>
+        <h4 className="ComponentBlockSelector-header">Add Components</h4>
+        <div className="ComponentBlockSelector">
+          <div className="ComponentBlockSelector-select-holder">
+            <Select
+              value={this.state.selected_component_block}
+              onChange={this.handle_selected_component_block_change}
+              options={this.renderOptions()}
+            />
+          </div>
+          <button onClick={this.addComponentBlock}>
+            Add
+          </button>
         </div>
-        <button onClick={this.addComponentBlock}>
-          Add
-        </button>
       </div>
     );
   }

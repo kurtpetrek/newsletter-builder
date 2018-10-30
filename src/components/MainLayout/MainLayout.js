@@ -1,7 +1,9 @@
 import React, { Component } from 'react';
 import ComponentBlockSelector from './../ComponentBlockSelector/ComponentBlockSelector';
 import ComponentBlockRenderer from './../ComponentBlockRenderer/ComponentBlockRenderer';
+import ShowHTMLOutput from './../ShowHTMLOutput/ShowHTMLOutput';
 import RenderPreview from './../RenderPreview/RenderPreview';
+import { arrayMove } from 'react-sortable-hoc';
 
 import renderHTML from './../../helperFunctions/renderHTML';
 
@@ -88,8 +90,13 @@ class MainLayout extends Component {
     });
   }
 
+  on_sort_end = ({oldIndex, newIndex}) => {
+    this.setState({
+      component_blocks: arrayMove(this.state.component_blocks, oldIndex, newIndex),
+    });
+  };
+
   render() {
-    console.log(this.state);
     return (
       <div className="MainLayout">
         <h1 style={{textAlign: 'center'}}>Newsletter Builder</h1>
@@ -99,6 +106,7 @@ class MainLayout extends Component {
               component_blocks={this.state.component_blocks}
               edit_component_block={this.edit_component_block}
               remove_component_block={this.remove_component_block}
+              on_sort_end={this.on_sort_end}
             />
             <ComponentBlockSelector add_component_block={this.add_component_block} />
           </div>
@@ -106,17 +114,9 @@ class MainLayout extends Component {
             <RenderPreview component_blocks={this.state.component_blocks}/>
           </div>
         </div>
-        <div style={{padding: '30px'}}>
-          <h1 style={{textAlign: 'center'}}>HTML Output</h1>
-          <code>
-            {
-              renderHTML({
-                component_blocks: this.state.component_blocks,
-                is_final: true
-              })
-            }
-          </code>
-        </div>
+        <ShowHTMLOutput
+          component_blocks={this.state.component_blocks}
+        />
       </div>
     );
   }

@@ -55,6 +55,7 @@ class Paragraph extends Component {
         <br/>
         <button onClick={this.addLinkHTML}>Add Link HTML</button>
         <br/>
+        <br/>
         <label className="utility-label">
           Use Background Color?
           <input

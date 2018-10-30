@@ -6,3 +6,16 @@
 .ComponentBlockSelector-select-holder {
   width: 300px;
 }
+
+.ComponentBlockSelector button {
+  margin-left: 10px;
+  background: #308dc6;
+  color: #fff;
+  font-size: 16px;
+  border-radius: 4px;
+  padding: 0 15px;
+}
+
+.ComponentBlockSelector-header {
+  margin: 10px 0;
+}
