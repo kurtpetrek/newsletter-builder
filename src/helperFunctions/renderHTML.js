@@ -138,7 +138,7 @@ const renderHTML = ({component_blocks, title, description, is_final}) => {
         break;
       case SPACER:
         content_string += `
-        <table class="spacer" style="${obj.has_background ? 'background:rgba(215,224,226,.59);' : ''}border-collapse:collapse;border-spacing:0;hyphens:none;padding:0;text-align:left;vertical-align:top;width:100%;word-break:normal">
+        <table class="spacer" style="${obj.has_background ? 'background:rgba(215,224,226,.59);' : ''}border-collapse:collapse;${obj.has_top_border ? 'border-top: solid 1px #d9d9d9;' : ""}border-spacing:0;hyphens:none;padding:0;text-align:left;vertical-align:top;width:100%;word-break:normal">
             <tbody style="hyphens:none;word-break:normal">
                 <tr style="hyphens:none;padding:0;text-align:left;vertical-align:top;word-break:normal">
                     <td height="${obj.size}px" style="-moz-hyphens:auto;-webkit-hyphens:auto;Margin:0;border-collapse:collapse!important;color:#0a0a0a;font-family:'Open Sans','Google Sans',Helvetica,Arial,sans-serif;font-size${obj.size}px;font-weight:400;hyphens:none;line-height:${obj.size}px;margin:0;mso-line-height-rule:exactly;padding:0;text-align:left;vertical-align:top;word-break:normal;word-wrap:break-word">&#xA0;</td>
@@ -163,7 +163,7 @@ const renderHTML = ({component_blocks, title, description, is_final}) => {
                         <table style="border-collapse:collapse;border-spacing:0;hyphens:none;padding:0;text-align:left;vertical-align:top;width:100%;word-break:normal">
                             <tr style="hyphens:none;padding:0;text-align:left;vertical-align:top;word-break:normal">
                                 <th style="Margin:0;color:#0a0a0a;font-family:'Open Sans','Google Sans',Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;hyphens:none;line-height:1.3;margin:0;padding:0;text-align:left;word-break:normal">
-                                    <h2 style="Margin:0;Margin-bottom:10px;color:#707070;font-family:'Open Sans','Google Sans',Helvetica,Arial,sans-serif;font-size:32px;font-weight:300;hyphens:none;line-height:1.34;margin:0;margin-bottom:10px;padding:0;text-align:center;word-break:normal;word-wrap:normal">${obj.text}</h2></th>
+                                  <h2 style="Margin:0;Margin-bottom:10px;color:#707070;font-family:'Open Sans','Google Sans',Helvetica,Arial,sans-serif;font-size:${obj.font_size ?  obj.font_size + 'px' : '32px'};font-weight:300;hyphens:none;line-height:1.34;margin:0;margin-bottom:10px;padding:0;text-align:center;word-break:normal;word-wrap:normal">${obj.text}</h2></th>
                             </tr>
                         </table>
                     </th>
@@ -195,7 +195,7 @@ const renderHTML = ({component_blocks, title, description, is_final}) => {
                         <table style="border-collapse:collapse;border-spacing:0;hyphens:none;padding:0;text-align:left;vertical-align:top;width:100%;word-break:normal">
                             <tr style="hyphens:none;padding:0;text-align:left;vertical-align:top;word-break:normal">
                                 <th style="Margin:0;color:#0a0a0a;font-family:'Open Sans','Google Sans',Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;hyphens:none;line-height:1.3;margin:0;padding:0;text-align:left;word-break:normal">
-                                    <p style="Margin:0;Margin-bottom:10px;color:#707070;font-family:'Open Sans','Google Sans',Helvetica,Arial,sans-serif;font-size:22px;font-weight:300;hyphens:none;line-height:1.47;margin:auto;margin-bottom:10px;padding:0;text-align:center;width:80%;word-break:normal">${obj.text}</p>
+                                    <p style="Margin:0;Margin-bottom:10px;color:#707070;font-family:'Open Sans','Google Sans',Helvetica,Arial,sans-serif;font-size:${obj.font_size ? obj.font_size + 'px' : '22px'};font-weight:300;hyphens:none;line-height:1.47;margin:auto;margin-bottom:10px;padding:0;text-align:center;width:80%;word-break:normal">${obj.text}</p>
                                 </th>
                             </tr>
                         </table>

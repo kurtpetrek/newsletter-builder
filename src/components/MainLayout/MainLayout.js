@@ -43,15 +43,18 @@ class MainLayout extends Component {
         stateObj.type = SPACER;
         stateObj.size = "28";
         stateObj.has_background = false;
+        stateObj.has_top_border = false;
         break;
       case HEADER:
         stateObj.type = HEADER;
+        stateObj.font_size = '32';
         stateObj.text = "";
         stateObj.has_background = false;
         break;
       case PARAGRAPH:
         stateObj.type = PARAGRAPH;
         stateObj.text = "";
+        stateObj.font_size = '22';
         stateObj.has_background = false;
         break;
       case FULL_WIDTH_IMAGE:

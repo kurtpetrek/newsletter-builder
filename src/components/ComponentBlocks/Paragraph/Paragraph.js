@@ -57,6 +57,17 @@ class Paragraph extends Component {
         <br/>
         <br/>
         <label className="utility-label">
+          <p>Font Size</p>
+          <input
+            type="number"
+            name="font_size"
+            value={data.font_size}
+            onChange={this.handleChange}
+          />
+        </label>
+        <br/>
+        <br/>
+        <label className="utility-label">
           Use Background Color?
           <input
             type="checkbox"
