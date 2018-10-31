@@ -51,6 +51,17 @@ class Spacer extends Component {
             onChange={this.toggleCheckboxChange}
           />
         </label>
+        <br/>
+        <br/>
+        <label className="utility-label">
+          Add top border?
+          <input
+            type="checkbox"
+            name="has_top_border"
+            checked={data.has_top_border}
+            onChange={this.toggleCheckboxChange}
+          />
+        </label>
 
         <br/>
         <button onClick={this.remove_block}>REMOVE</button>
