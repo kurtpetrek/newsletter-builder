@@ -6,6 +6,7 @@ import Header from './../ComponentBlocks/Header/Header';
 import Paragraph from './../ComponentBlocks/Paragraph/Paragraph';
 import FullWidthImage from './../ComponentBlocks/FullWidthImage/FullWidthImage';
 import Button from './../ComponentBlocks/Button/Button';
+import SmallImage from './../ComponentBlocks/SmallImage/SmallImage';
 
 import {
   MAIN_BANNER,
@@ -14,6 +15,7 @@ import {
   PARAGRAPH,
   FULL_WIDTH_IMAGE,
   BUTTON,
+  SMALL_IMAGE,
 } from './../../constants/constants';
 
 const SortableItem = SortableElement(({value, edit_component_block, remove_component_block, i}) =>{
@@ -77,6 +79,17 @@ const SortableItem = SortableElement(({value, edit_component_block, remove_compo
     case BUTTON:
       return (
         <Button
+          edit_component_block={edit_component_block}
+          data={obj}
+          index={i}
+          key={obj.type + i}
+          remove_component_block={remove_component_block}
+        />
+      )
+      break;
+    case SMALL_IMAGE:
+      return (
+        <SmallImage
           edit_component_block={edit_component_block}
           data={obj}
           index={i}

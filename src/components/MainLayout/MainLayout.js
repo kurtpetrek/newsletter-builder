@@ -16,6 +16,7 @@ import {
   PARAGRAPH,
   FULL_WIDTH_IMAGE,
   BUTTON,
+  SMALL_IMAGE,
 } from './../../constants/constants';
 
 import './MainLayout.css';
@@ -66,6 +67,12 @@ class MainLayout extends Component {
         stateObj.type = BUTTON;
         stateObj.href = "";
         stateObj.text = "";
+        stateObj.has_background = false;
+        break;
+      case SMALL_IMAGE:
+        stateObj.type = SMALL_IMAGE;
+        stateObj.img_src = "";
+        stateObj.img_alt = "";
         stateObj.has_background = false;
         break;
       default:

@@ -6,7 +6,8 @@ import {
   HEADER,
   PARAGRAPH,
   FULL_WIDTH_IMAGE,
-  BUTTON
+  BUTTON,
+  SMALL_IMAGE,
 } from './../../constants/constants';
 
 import './ComponentBlockSelector.css'
@@ -27,6 +28,7 @@ class ComponentBlockSelector extends Component {
       {label: "Paragraph", value: PARAGRAPH},
       {label: "Full Width Image", value: FULL_WIDTH_IMAGE},
       {label: "Button", value: BUTTON},
+      {label: "Small Image", value: SMALL_IMAGE},
     ]
   }
 

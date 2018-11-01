@@ -5,6 +5,7 @@ import {
   PARAGRAPH,
   FULL_WIDTH_IMAGE,
   BUTTON,
+  SMALL_IMAGE,
 } from './../constants/constants';
 
 const renderHTML = ({component_blocks, title, description, is_final}) => {
@@ -259,6 +260,26 @@ const renderHTML = ({component_blocks, title, description, is_final}) => {
                     </th>
                 </tr>
             </tbody>
+        </table>
+        `;
+        break;
+      case SMALL_IMAGE:
+        content_string += `
+        <table class="row" style="${obj.has_background ? 'background:rgba(215,224,226,.59);' : ''}border-collapse:collapse;border-spacing:0;display:table;hyphens:none;padding:0;position:relative;text-align:left;vertical-align:top;width:100%;word-break:normal">
+          <tbody style="hyphens:none;word-break:normal">
+              <tr style="hyphens:none;padding:0;text-align:left;vertical-align:top;word-break:normal">
+                  <th class="small-12 large-12 columns first last" style="Margin:0 auto;color:#0a0a0a;font-family:'Open Sans','Google Sans',Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;hyphens:none;line-height:1.3;margin:0 auto;padding:0;padding-bottom:0;padding-left:0;padding-right:0;text-align:left;width:580px;word-break:normal">
+                      <table style="border-collapse:collapse;border-spacing:0;hyphens:none;padding:0;text-align:left;vertical-align:top;width:100%;word-break:normal">
+                          <tr style="hyphens:none;padding:0;text-align:left;vertical-align:top;word-break:normal">
+                              <th style="Margin:0;color:#0a0a0a;font-family:'Open Sans','Google Sans',Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;hyphens:none;line-height:1.3;margin:0;padding:0;text-align:left;word-break:normal">
+                                  <center data-parsed="" style="hyphens:none;min-width:580px;width:100%;word-break:normal"><img src="${obj.img_src}" alt="${obj.img_alt}" class="footer-image float-center" align="center" style="-ms-interpolation-mode:bicubic;Margin:0 auto;clear:both;display:block;float:none;hyphens:none;margin:0 auto;max-width:100%;outline:0;text-align:center;text-decoration:none;width:113px!important;word-break:normal"></center>
+                              </th>
+                              <th class="expander" style="Margin:0;color:#0a0a0a;font-family:'Open Sans','Google Sans',Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;hyphens:none;line-height:1.3;margin:0;padding:0!important;text-align:left;visibility:hidden;width:0;word-break:normal"></th>
+                          </tr>
+                      </table>
+                  </th>
+              </tr>
+          </tbody>
         </table>
         `;
         break;
