@@ -30,8 +30,7 @@ const SortableItem = SortableElement(({value, edit_component_block, remove_compo
           key={obj.type + i}
           remove_component_block={remove_component_block}
         />
-      )
-      break;
+      );
     case SPACER:
       return (
         <Spacer
@@ -41,8 +40,7 @@ const SortableItem = SortableElement(({value, edit_component_block, remove_compo
           key={obj.type + i}
           remove_component_block={remove_component_block}
         />
-      )
-      break;
+      );
     case HEADER:
       return (
         <Header
@@ -52,8 +50,7 @@ const SortableItem = SortableElement(({value, edit_component_block, remove_compo
           key={obj.type + i}
           remove_component_block={remove_component_block}
         />
-      )
-      break;
+      );
     case PARAGRAPH:
       return (
         <Paragraph
@@ -63,8 +60,7 @@ const SortableItem = SortableElement(({value, edit_component_block, remove_compo
           key={obj.type + i}
           remove_component_block={remove_component_block}
         />
-      )
-      break;
+      );
     case FULL_WIDTH_IMAGE:
       return (
         <FullWidthImage
@@ -74,8 +70,7 @@ const SortableItem = SortableElement(({value, edit_component_block, remove_compo
           key={obj.type + i}
           remove_component_block={remove_component_block}
         />
-      )
-      break;
+      );
     case BUTTON:
       return (
         <Button
@@ -85,8 +80,7 @@ const SortableItem = SortableElement(({value, edit_component_block, remove_compo
           key={obj.type + i}
           remove_component_block={remove_component_block}
         />
-      )
-      break;
+      );
     case SMALL_IMAGE:
       return (
         <SmallImage
@@ -96,8 +90,7 @@ const SortableItem = SortableElement(({value, edit_component_block, remove_compo
           key={obj.type + i}
           remove_component_block={remove_component_block}
         />
-      )
-      break;
+      );
     default:
       return;
   }
@@ -131,14 +124,6 @@ class ComponentBlockRenderer extends Component {
       remove_component_block,
       on_sort_end
     } = this.props;
-
-    const drag_key = component_blocks.reduce((accum, obj, i) => {
-      accum = accum || '';
-      accum += obj.type;
-      accum += i;
-      accum += (obj.text || obj.img_src || obj.size);
-      return accum;
-    }, "");
 
     return (
       <div key={""}>

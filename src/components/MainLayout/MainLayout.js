@@ -8,8 +8,6 @@ import SaveBar from './../SaveBar/SaveBar';
 
 import { arrayMove } from 'react-sortable-hoc';
 
-import renderHTML from './../../helperFunctions/renderHTML';
-
 import {
   MAIN_BANNER,
   SPACER,
