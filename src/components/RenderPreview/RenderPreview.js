@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import renderHTML from './../../helperFunctions/renderHTML';
+import './RenderPreview.css';
 
 class RenderPreview extends Component {
 
@@ -9,9 +10,11 @@ class RenderPreview extends Component {
 
   render() {
     return (
-      <div
-        dangerouslySetInnerHTML={{__html: this.render_HTML_pereview()}}
-      />
+      <div className="RenderPreview">
+        <div
+          dangerouslySetInnerHTML={{__html: this.render_HTML_pereview()}}
+        />
+      </div>
     );
   }
 
