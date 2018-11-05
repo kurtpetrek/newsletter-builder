@@ -1,0 +1,51 @@
+.SaveBar {
+  display: flex;
+  background: #0085ca;
+  color: #fff;
+  align-items: center;
+  margin-bottom: 10px;
+  padding: 10px 15px;
+}
+
+.SaveBar-header {
+  font-size: 26px;
+  margin: 0;
+}
+
+.SaveBar-button-container {
+  margin-left: auto;
+  display: flex;
+}
+
+.SaveBar-button-container div {
+  margin-left: 15px;
+}
+
+.SaveBar-button-container button {
+  border: 1px solid #fff;
+  background: #ff6900;
+  color: #fff;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 5px 10px;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.SaveBar-button-container button:hover {
+  transform: translateY(-2px);
+  background: #fff;
+  color: #ff6900;
+}
+
+.SaveBar-button-container button:active {
+  transform: translateY(0px) scale(.9);
+}
+
+.SaveBar-button-container button:first-child {
+  border-radius: 5px 0 0 5px;
+}
+
+.SaveBar-button-container button:nth-child(2) {
+  border-radius: 0 5px 5px 0;
+}

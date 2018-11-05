@@ -4,6 +4,7 @@ import ComponentBlockRenderer from './../ComponentBlockRenderer/ComponentBlockRe
 import ShowHTMLOutput from './../ShowHTMLOutput/ShowHTMLOutput';
 import RenderPreview from './../RenderPreview/RenderPreview';
 import TitleDescription from './../TitleDescription/TitleDescription';
+import SaveBar from './../SaveBar/SaveBar';
 
 import { arrayMove } from 'react-sortable-hoc';
 
@@ -117,10 +118,19 @@ class MainLayout extends Component {
     });
   };
 
+  set_state_from_load = (data) => {
+    this.setState(prevState => {
+      return data;
+    });
+  };
+
   render() {
     return (
       <div className="MainLayout">
-        <h1 style={{textAlign: 'center'}}>Newsletter Builder</h1>
+        <SaveBar
+          currentState={this.state}
+          set_state_from_load={this.set_state_from_load}
+        />
 
         <TitleDescription
           handle_change={this.set_input_value}
