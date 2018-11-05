@@ -1,13 +1,13 @@
 {
-  "main.css": "/newsletter-builder/static/css/main.d57075f1.chunk.css",
-  "main.js": "/newsletter-builder/static/js/main.46f4b31a.chunk.js",
-  "main.js.map": "/newsletter-builder/static/js/main.46f4b31a.chunk.js.map",
-  "static/js/1.bc8821ab.chunk.js": "/newsletter-builder/static/js/1.bc8821ab.chunk.js",
-  "static/js/1.bc8821ab.chunk.js.map": "/newsletter-builder/static/js/1.bc8821ab.chunk.js.map",
+  "main.css": "/newsletter-builder/static/css/main.c86c16e2.chunk.css",
+  "main.js": "/newsletter-builder/static/js/main.25f5495d.chunk.js",
+  "main.js.map": "/newsletter-builder/static/js/main.25f5495d.chunk.js.map",
+  "static/js/1.7edde972.chunk.js": "/newsletter-builder/static/js/1.7edde972.chunk.js",
+  "static/js/1.7edde972.chunk.js.map": "/newsletter-builder/static/js/1.7edde972.chunk.js.map",
   "runtime~main.js": "/newsletter-builder/static/js/runtime~main.84d73424.js",
   "runtime~main.js.map": "/newsletter-builder/static/js/runtime~main.84d73424.js.map",
-  "static/css/main.d57075f1.chunk.css.map": "/newsletter-builder/static/css/main.d57075f1.chunk.css.map",
+  "static/css/main.c86c16e2.chunk.css.map": "/newsletter-builder/static/css/main.c86c16e2.chunk.css.map",
   "index.html": "/newsletter-builder/index.html",
-  "precache-manifest.a4b5e15b71356ef5abbd402d0b5e5507.js": "/newsletter-builder/precache-manifest.a4b5e15b71356ef5abbd402d0b5e5507.js",
+  "precache-manifest.3f872ad2a9281336cd9f0681f8f88796.js": "/newsletter-builder/precache-manifest.3f872ad2a9281336cd9f0681f8f88796.js",
   "service-worker.js": "/newsletter-builder/service-worker.js"
 }
