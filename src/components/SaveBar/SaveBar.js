@@ -63,6 +63,12 @@ class SaveBar extends Component {
       <div className="SaveBar">
         <h1 className="SaveBar-header">Newsletter Builder</h1>
         <div className="SaveBar-button-container">
+          <button
+            onClick={this.props.toggle_render_view_lock}
+            style={{borderRadius: '5px'}}
+          >
+            Toggle Preview Scroll
+          </button>
           <div>
             <button
               onClick={this.handleSaveClick}

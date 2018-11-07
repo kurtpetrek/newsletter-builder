@@ -26,7 +26,8 @@ class MainLayout extends Component {
     this.state = {
       component_blocks: [],
       title: "",
-      description: ""
+      description: "",
+      lock_render_view_scroll: false,
     };
   }
 
@@ -122,12 +123,21 @@ class MainLayout extends Component {
     });
   };
 
+  toggle_render_view_lock = () => {
+    this.setState(prevState => {
+      const state = {...prevState};
+      state.lock_render_view_scroll = !state.lock_render_view_scroll;
+      return state;
+    });
+  };
+
   render() {
     return (
       <div className="MainLayout">
         <SaveBar
           currentState={this.state}
           set_state_from_load={this.set_state_from_load}
+          toggle_render_view_lock={this.toggle_render_view_lock}
         />
 
         <TitleDescription
@@ -149,6 +159,7 @@ class MainLayout extends Component {
             <RenderPreview
               component_blocks={this.state.component_blocks}
               is_final={false}
+              lock_preview_scroll={this.state.lock_render_view_scroll}
             />
           </div>
         </div>
