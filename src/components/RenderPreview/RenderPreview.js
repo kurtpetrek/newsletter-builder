@@ -10,7 +10,7 @@ class RenderPreview extends Component {
 
   render() {
     return (
-      <div className="RenderPreview">
+      <div className={this.props.lock_preview_scroll ? 'RenderPreview' : ''}>
         <div
           dangerouslySetInnerHTML={{__html: this.render_HTML_pereview()}}
         />
