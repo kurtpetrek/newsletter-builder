@@ -4,6 +4,27 @@ import renderHTML from './../../helperFunctions/renderHTML';
 
 class ShowHTMLOutput extends Component {
 
+  constructor(props) {
+    super(props);
+    this.state = {
+      copied: false
+    };
+    this.__isMounted = true;
+  }
+
+  componentWillUnmount() {
+    this.__isMounted = false;
+  }
+
+  copy_clicked = () => {
+    this.setState({copied: true});
+    if (this.__isMounted) {
+      setTimeout(()=>{
+        this.setState({copied: false});
+      },2000)
+    }
+  };
+
   render() {
     const content = renderHTML({
       component_blocks: this.props.component_blocks,
@@ -16,19 +37,19 @@ class ShowHTMLOutput extends Component {
       <div style={{padding: '10px'}}>
         <div style={{textAlign: 'center'}}>
           <h1>HTML Output</h1>
-          <a href="https://unminify.com/" target="_blank" rel="noopener noreferrer">Unminify HTML here</a>
           <br/>
-          <br/>
-          <CopyToClipboard text={content}>
+          <CopyToClipboard
+            text={content}
+            onCopy={this.copy_clicked}
+          >
             <button style={{background: '#308dc6', padding: '10px 20px', color: '#fff', fontSize: '16px'}}>Copy HTML to clipboard</button>
           </CopyToClipboard>
           <br/>
+          {
+            this.state.copied &&
+            <p>Copied!</p>
+          }
           <p>Final code that goes in email should be <a href="http://minifycode.com/html-minifier/" target="_blank" rel="noopener noreferrer">minified</a></p>
-        </div>
-        <div style={{background: '#eee', padding: '10px'}}>
-          <code>
-            { content }
-          </code>
         </div>
       </div>
     );
