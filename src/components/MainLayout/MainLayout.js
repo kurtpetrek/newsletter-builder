@@ -62,6 +62,8 @@ class MainLayout extends Component {
         stateObj.type = FULL_WIDTH_IMAGE;
         stateObj.img_src = "";
         stateObj.img_alt = "";
+        stateObj.is_link = false;
+        stateObj.link_href = "";
         break;
       case BUTTON:
         stateObj.type = BUTTON;

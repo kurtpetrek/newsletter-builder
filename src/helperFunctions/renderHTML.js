@@ -224,7 +224,19 @@ const renderHTML = ({component_blocks, title, description, is_final}) => {
                     <th class="small-12 large-12 columns first last" style="Margin:0 auto;color:#0a0a0a;font-family:'Open Sans','Google Sans',Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;hyphens:none;line-height:1.3;margin:0 auto;padding:0;padding-bottom:0;padding-left:0;padding-right:0;text-align:left;width:580px;word-break:normal">
                         <table style="border-collapse:collapse;border-spacing:0;hyphens:none;padding:0;text-align:left;vertical-align:top;width:100%;word-break:normal">
                             <tr style="hyphens:none;padding:0;text-align:left;vertical-align:top;word-break:normal">
-                                <th style="Margin:0;color:#0a0a0a;font-family:'Open Sans','Google Sans',Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;hyphens:none;line-height:1.3;margin:0;padding:0;text-align:left;word-break:normal"><img src="${obj.img_src}" alt="${obj.img_alt}" class="full-image" style="-ms-interpolation-mode:bicubic;clear:both;display:block;hyphens:none;max-width:580px;outline:0;text-decoration:none;width:100%;word-break:normal" width="580"/></th>
+                                <th style="Margin:0;color:#0a0a0a;font-family:'Open Sans','Google Sans',Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;hyphens:none;line-height:1.3;margin:0;padding:0;text-align:left;word-break:normal">
+                                ${
+                                  obj.is_link ?
+                                  `<a href="${obj.link_href}" target="_blank" rel="noopener noreferrer" style="Margin:0;color:#707070;font-family:'Open Sans','Google Sans',Helvetica,Arial,sans-serif;font-weight:400;hyphens:none;line-height:1.3;margin:0;padding:0;text-align:left;text-decoration:underline;word-break:normal">`
+                                  : ''
+                                }
+                                <img src="${obj.img_src}" alt="${obj.img_alt}" class="full-image" style="-ms-interpolation-mode:bicubic;clear:both;display:block;hyphens:none;max-width:580px;outline:0;text-decoration:none;width:100%;word-break:normal" width="580"/>
+                                ${
+                                  obj.is_link ?
+                                  `</a>`
+                                  : ''
+                                }
+                                </th>
                                 <th class="expander" style="Margin:0;color:#0a0a0a;font-family:'Open Sans','Google Sans',Helvetica,Arial,sans-serif;font-size:16px;font-weight:400;hyphens:none;line-height:1.3;margin:0;padding:0!important;text-align:left;visibility:hidden;width:0;word-break:normal"></th>
                             </tr>
                         </table>

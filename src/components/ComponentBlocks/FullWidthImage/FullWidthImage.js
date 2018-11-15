@@ -12,6 +12,16 @@ class FullWidthImage extends Component {
     this.props.edit_component_block(data_obj);
   }
 
+  toggleCheckboxChange = (e) => {
+    const { name, checked } = e.target;
+    const data_obj = {
+      index: this.props.index,
+      prop: name,
+      value: checked,
+    };
+    this.props.edit_component_block(data_obj);
+  }
+
   remove_block = () => {
     this.props.remove_component_block(this.props.index);
   }
@@ -40,6 +50,31 @@ class FullWidthImage extends Component {
             onChange={this.handleChange}
           />
         </label>
+
+        <br/>
+        <br/>
+        <label className="utility-label">
+          Make Link?
+          <input
+            type="checkbox"
+            name="is_link"
+            checked={data.is_link}
+            onChange={this.toggleCheckboxChange}
+          />
+        </label>
+
+        {
+          data.is_link &&
+          <label className="utility-label">
+            <p>Link HREF</p>
+            <input
+              type="text"
+              name="link_href"
+              value={data.link_href}
+              onChange={this.handleChange}
+            />
+          </label>
+        }
 
         <br/>
 
