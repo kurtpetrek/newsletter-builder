@@ -31,7 +31,7 @@ class ShowHTMLOutput extends Component {
       title: this.props.title,
       description: this.props.description,
       is_final: this.props.is_final
-    });
+    }).replace(/(\r\n\t|\n|\r\t)/gm,"").replace(/ +(?= )/g,'');
 
     return (
       <div style={{padding: '10px'}}>
